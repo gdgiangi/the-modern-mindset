@@ -24,7 +24,7 @@ const PostDetails = ({ post }) => {
   return (
     <>
       <Head>
-        <title>{post.title} | The Modern Mindset</title>
+        <title>{post.title}</title>
         <link rel="icon" href="/fav.png" />
         <meta name="robots" content="all" />
         <meta name="description" content={post.excerpt} />
