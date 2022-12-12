@@ -18,6 +18,14 @@ const Home: NextPage = ({ posts }) => {
         <meta property="og:title" content="The Modern Mindset" />
         <meta property="og:image" content="/social.avif" />
       </Head>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRTKDYCN7V"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RRTKDYCN7V');
+      </script>
       <FeaturedPosts />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">
