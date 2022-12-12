@@ -16,10 +16,6 @@ const Home: NextPage = ({ posts }) => {
           content="The Modern Mindset is a men's lifestyle and personal growth blog that offers practical advice, tips, and inspiration for living a fulfilling and successful life."
         />
         <meta property="og:title" content="The Modern Mindset" />
-        <meta
-          property="og:description"
-          content="The Modern Mindset is a men's lifestyle and personal growth blog that offers practical advice, tips, and inspiration for living a fulfilling and successful life."
-        />
         <meta property="og:image" content="/social.avif" />
       </Head>
       <FeaturedPosts />

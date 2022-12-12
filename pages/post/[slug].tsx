@@ -28,7 +28,7 @@ const PostDetails = ({ post }) => {
         <link rel="icon" href="/fav.png" />
         <meta name="robots" content="all" />
         <meta name="description" content={post.excerpt} />
-        <meta property="og:title" content="{post.title} | The Modern Mindset" />
+        <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:image" content={post.featuredImage.url} />
       </Head>
