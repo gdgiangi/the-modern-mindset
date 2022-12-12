@@ -123,6 +123,7 @@ const PostDetail = ({ post }: { post: any }) => {
           return getContentFragment(index, children, typeObj, typeObj.type);
         })}
       </div>
+      <hr className="pb-2" />
       <div className="px-4 lg:px-0 text-center">
         <p className="pb-4 text-gray-500">Share</p>
         <FacebookShareButton
@@ -156,7 +157,7 @@ const PostDetail = ({ post }: { post: any }) => {
         <EmailShareButton
           url={`modermindset.ca/post/${post.slug}`}
           subject={post.title}
-          body="The Modern Mindset - "
+          body="Link to article -> "
         >
           <EmailIcon size={32} round />
         </EmailShareButton>
