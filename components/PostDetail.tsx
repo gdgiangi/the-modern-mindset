@@ -1,5 +1,19 @@
 import React from "react";
 import moment from "moment";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  PinterestShareButton,
+  PinterestIcon,
+  RedditShareButton,
+  RedditIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+  EmailShareButton,
+  EmailIcon,
+} from "next-share";
 
 const PostDetail = ({ post }: { post: any }) => {
   const getContentFragment = (index, text, obj, type) => {
@@ -82,7 +96,7 @@ const PostDetail = ({ post }: { post: any }) => {
               {post.author.name}
             </p>
           </div>
-          <div className="font-medium text-gray-700">
+          <div className="flex font-medium text-gray-700">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 inline mr-2 text-fuchsia-700"
@@ -108,6 +122,50 @@ const PostDetail = ({ post }: { post: any }) => {
 
           return getContentFragment(index, children, typeObj, typeObj.type);
         })}
+      </div>
+      <div className="px-4 lg:px-0 text-center">
+        <p className="pb-4 text-gray-500">Share</p>
+        <FacebookShareButton
+          url={`modermindset.ca/post/${post.slug}`}
+          quote={post.excerpt}
+          hashtag={"#themodernmindset"}
+        >
+          <FacebookIcon size={32} round className="mr-4" />
+        </FacebookShareButton>
+        <PinterestShareButton
+          url={"https://github.com/next-share"}
+          media={
+            "next-share is a social share buttons for your next React apps."
+          }
+        >
+          <PinterestIcon size={32} round className="mr-4" />
+        </PinterestShareButton>
+        <RedditShareButton
+          url={"https://github.com/next-share"}
+          title={
+            "next-share is a social share buttons for your next React apps."
+          }
+        >
+          <RedditIcon size={32} round className="mr-4" />
+        </RedditShareButton>
+        <TwitterShareButton
+          url={"https://github.com/next-share"}
+          title={
+            "next-share is a social share buttons for your next React apps."
+          }
+        >
+          <TwitterIcon size={32} round className="mr-4" />
+        </TwitterShareButton>
+        <LinkedinShareButton url={"https://github.com/next-share"}>
+          <LinkedinIcon size={32} round className="mr-4" />
+        </LinkedinShareButton>
+        <EmailShareButton
+          url={"https://github.com/next-share"}
+          subject={"Next Share"}
+          body="body"
+        >
+          <EmailIcon size={32} round />
+        </EmailShareButton>
       </div>
     </div>
   );
