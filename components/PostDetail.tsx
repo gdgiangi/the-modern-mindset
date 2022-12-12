@@ -127,42 +127,36 @@ const PostDetail = ({ post }: { post: any }) => {
         <p className="pb-4 text-gray-500">Share</p>
         <FacebookShareButton
           url={`modermindset.ca/post/${post.slug}`}
-          quote={post.excerpt}
+          quote={post.title}
           hashtag={"#themodernmindset"}
         >
           <FacebookIcon size={32} round className="mr-4" />
         </FacebookShareButton>
         <PinterestShareButton
-          url={"https://github.com/next-share"}
-          media={
-            "next-share is a social share buttons for your next React apps."
-          }
+          url={`modermindset.ca/post/${post.slug}`}
+          media={post.title}
         >
           <PinterestIcon size={32} round className="mr-4" />
         </PinterestShareButton>
         <RedditShareButton
-          url={"https://github.com/next-share"}
-          title={
-            "next-share is a social share buttons for your next React apps."
-          }
+          url={`modermindset.ca/post/${post.slug}`}
+          title={post.title}
         >
           <RedditIcon size={32} round className="mr-4" />
         </RedditShareButton>
         <TwitterShareButton
-          url={"https://github.com/next-share"}
-          title={
-            "next-share is a social share buttons for your next React apps."
-          }
+          url={`modermindset.ca/post/${post.slug}`}
+          title={post.title}
         >
           <TwitterIcon size={32} round className="mr-4" />
         </TwitterShareButton>
-        <LinkedinShareButton url={"https://github.com/next-share"}>
+        <LinkedinShareButton url={`modermindset.ca/post/${post.slug}`}>
           <LinkedinIcon size={32} round className="mr-4" />
         </LinkedinShareButton>
         <EmailShareButton
-          url={"https://github.com/next-share"}
-          subject={"Next Share"}
-          body="body"
+          url={`modermindset.ca/post/${post.slug}`}
+          subject={post.title}
+          body="The Modern Mindset - "
         >
           <EmailIcon size={32} round />
         </EmailShareButton>
