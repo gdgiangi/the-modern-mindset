@@ -1,10 +1,17 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { PostWidget, PostCard, Categories } from "../components";
+import { PostWidget, PostCard, Categories, Loader } from "../components";
 import { getPosts } from "../services";
 import { FeaturedPosts } from "../sections";
+import { useRouter } from "next/router";
 
 const Home: NextPage = ({ posts }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <Loader />;
+  }
+
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>

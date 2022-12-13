@@ -8,11 +8,11 @@ type Data = {
   name: string;
 };
 
-export default async function comments(
+export default async function emails(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const { name, email, comment, slug } = req.body;
+  const { email } = req.body;
 
   const graphQLClient = new GraphQLClient(graphqlAPI, {
     headers: {
@@ -21,22 +21,8 @@ export default async function comments(
   });
 
   const query = gql`
-    mutation CreateComment(
-      $name: String!
-      $email: String!
-      $comment: String!
-      $slug: String!
-    ) {
-      createComment(
-        data: {
-          name: $name
-          email: $email
-          comment: $comment
-          post: { connect: { slug: $slug } }
-        }
-      ) {
-        id
-      }
+    mutation CreateEmail($email: String!) {
+      createEmail_List(data: { email: $email })
     }
   `;
 
