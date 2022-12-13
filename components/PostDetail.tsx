@@ -14,6 +14,7 @@ import {
   EmailShareButton,
   EmailIcon,
 } from "next-share";
+import Link from "next/link";
 
 const PostDetail = ({ post }: { post: any }) => {
   const getContentFragment = (index, text, obj, type) => {
@@ -30,6 +31,27 @@ const PostDetail = ({ post }: { post: any }) => {
 
       if (obj.underline) {
         modifiedText = <u key={index}>{text}</u>;
+      }
+
+      if (obj.code) {
+        modifiedText = <code key={index}>{text}</code>;
+      }
+
+      if (obj.strikethrough) {
+        modifiedText = <del key={index}>{text}</del>;
+      }
+
+      if (type === "link") {
+        modifiedText = (
+          <a
+            href={obj.href}
+            key={index}
+            target="_blank"
+            className="text-fuchsia-700"
+          >
+            {obj.children[0].text}
+          </a>
+        );
       }
     }
 
@@ -117,7 +139,7 @@ const PostDetail = ({ post }: { post: any }) => {
         <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
         {post.content.raw.children.map((typeObj, index) => {
           const children = typeObj.children.map((item, itemIndex) =>
-            getContentFragment(itemIndex, item.text, item)
+            getContentFragment(itemIndex, item.text, item, item.type)
           );
 
           return getContentFragment(index, children, typeObj, typeObj.type);
