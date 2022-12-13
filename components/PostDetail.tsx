@@ -34,7 +34,11 @@ const PostDetail = ({ post }: { post: any }) => {
       }
 
       if (obj.code) {
-        modifiedText = <code key={index}>{text}</code>;
+        modifiedText = (
+          <pre>
+            <code key={index}>{text}</code>
+          </pre>
+        );
       }
 
       if (obj.strikethrough) {
